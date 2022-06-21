@@ -22,6 +22,16 @@ class loginOrSignUpScreen extends StatelessWidget {
                       fit: BoxFit.cover),
                 ),
               ),
+              Container(
+
+                alignment: FractionalOffset(0.5, 0.17),
+                child: Text('Words Bank' ,style: TextStyle(color: Colors.blue[500]!,
+                fontSize: 50,
+                fontWeight:FontWeight.w500,
+                    fontStyle: FontStyle.italic,
+                ),),
+              ),
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 70),
 
