@@ -274,3 +274,46 @@ void navigatorFinish(context, widget) => Navigator.pushAndRemoveUntil(
         context, MaterialPageRoute(builder: (context) => widget), (route) {
       return false;
     });
+
+Widget defaultButton({
+  double width= 300.0,
+  double height= 70.0,
+  double radius = 30.0,
+  Color color=Colors.blue,
+  Color colorText=Colors.white,
+  Color colorBorder=Colors.blue,
+
+  bool isuppercase=true,
+  required Function onpre,
+  required String text,
+})=>ClipRRect(
+  borderRadius: BorderRadius.circular(radius),
+
+  child: Container(
+    color: color,
+    height: height,
+    width: width,
+
+    child: MaterialButton(
+    shape:  RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(radius),
+      side: BorderSide(color: colorBorder,width: 5.0),
+    ),
+      onPressed: (){
+        onpre(
+
+        );
+      },
+      child:
+      Text(
+        isuppercase?text.toUpperCase():text,
+        style: TextStyle(
+          fontSize: 35.0,
+          color: colorText,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    ),
+
+  ),
+);
