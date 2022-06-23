@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:w/screen/login2.dart';
 import 'package:w/screen/signUp_screen.dart';
 
+import '../main.dart';
 import '../widget/components.dart';
+import 'home_screen.dart';
 class loginOrSignUpScreen extends StatelessWidget {
   const loginOrSignUpScreen({Key? key}) : super(key: key);
 
@@ -68,7 +70,28 @@ class loginOrSignUpScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 70),
+                child: Container(
+                  alignment: FractionalOffset(1.3, 0.04),                  child:TextButton(
+                    onPressed: () {
+                      sharedPref.setString('id_user','-1');
 
+                      navigatorTo(
+                        context,
+                        const HomeScreen(),
+                      );
+                    },
+                    child:  Text(
+                      'Skip',
+                      style: TextStyle(color:Colors.blue[500]!,
+                        fontWeight:FontWeight.w400,
+                        fontSize: 30
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           )),
         ],
